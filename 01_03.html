@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation</title>
+    <style>
+        @keyframes sample-ani {
+            0% {
+                /* 이동 안한 상태 */
+                transform: translate(0, 0);
+            }
+            30% {
+                transform: translate(300px, 0);
+            }
+            60% {
+                transform: translate(400px, 500px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: #fff000;
+            /* animation : keyframe을 추가 할 수 있다. */
+            animation: sample-ani 3s cubic-bezier(0.75,-0.03, 0.18, 1.01) 3;
+            /* infinite를 사용하면 계속해서 animation이 작동 된다. infinite가 아닌 숫자로 지정시 지정한 숫자만큼 작동된다.*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. transition -->
+    <!-- 2. animation -->
+    <h1>Animation</h1>
+    <div class="box">
+        BOX
+    </div>
+</body>
+</html>
