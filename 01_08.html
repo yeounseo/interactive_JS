@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Flex</title>
+    <style>
+        .container {
+            display: flex;
+            /* direction속성의 기본값은 row */
+            /* flex-direction: column; */
+            justify-content: flex-end;
+            /* justify-content : 메인축위에서 item들을 정렬하는 속성 */
+            /* space-between , space-around 등의 속성을 자주 사용한다. */
+            align-items: stretch;
+            /* align-items : 수직 정렬 */
+            height: 80vh;
+            background: gray;
+        }
+        .item {
+            /* 축약형으로 flex로 쓸 수 있다. */
+            /* grow , shrink , basis 값을 순서로 지정한다. */
+            /* shrink 속성 : 주축의 공간이 부족할때 각 항목의 사이즈를 줄이는 방법을 정의한다. */
+            flex: 1;
+            /* grow 속성 : 숫자를 넣으면 item들이 늘어난다. */
+            /* flex-grow: 1; */
+            /* nth-child를 사용하면 확연히 보인다. */
+            /* flex-grow는 각각 content 폭을 제외한 여백을 기준으로 비율을 나눈다. */
+            /* flex-basis: 0; */
+            /* flex-basis는 정확하게 content 폭을 포함한 기준으로 비율을 나눈다. 기본값은 auto */
+            border: 3px solid black;
+            background: white;
+        }
+        /* .item:nth-child(1) {
+            flex-grow: 1;
+        }
+        .item:nth-child(2) {
+            flex-grow: 5;
+        }
+        .item:nth-child(3) {
+            flex-grow: 3;
+        }
+        .item:nth-child(4) {
+            flex-grow: 2;
+        }
+        .item:nth-child(5) {
+            flex-grow: 4;
+        } */
+    </style>
+</head>
+<body>
+    <!-- flex는 축이 한 방향 -->
+    <!-- flex는 익스플로러10부터 지원한다. -->
+    <!-- grid로 전체 page의 골격을 잡고 , 내부는 flex로 정렬한다던지 사용하면 좋다. -->
+    <!-- grid는 지원하는 브라우저가 아직 많지 않아서, 실무에서 바로 적용하기는 힘들수도있다. -->
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">B</div>
+        <div class="item">CCCCCC</div>
+        <div class="item">DDD</div>
+        <div class="item">E</div>
+    </div>
+</body>
+</html>
