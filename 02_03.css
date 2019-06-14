@@ -4,11 +4,15 @@ img {
 }
 
 .characters { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     background: #fff000;
 }
 
 .ilbuni {
     width: 100px;
+    cursor: pointer;
 }
 
 .characters .ilbuni {

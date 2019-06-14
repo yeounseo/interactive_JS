@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event basic!</title>
+    <link rel="stylesheet" href="02_03.css">
+    <!-- 
+        <script>
+            load 이 아닌 DOMContentLoaded 로 작성하면 골격구조만 load가 되면 바로 실행된다. load는 모든 content img도 load 되어야 작동한다.
+        window.addEventListener('load', function() {
+            const ilbuni = document.querySelector('.ilbuni.c');
+            // console.log(ilbuni);
+            function clickInbuniHandler() {
+                ilbuni.classList.toggle('special');
+            }
+            ilbuni.addEventListener('click', clickInbuniHandler);
+        });
+
+        </script>
+     -->
+</head>
+<body>
+    <div class="characters">
+        <div class="ilbuni a">
+            <img src="images/ilbuni_0.png" alt="#">
+        </div>
+        <div class="ilbuni b">
+            <img src="images/ilbuni_1.png" alt="#">
+        </div>
+        <div class="ilbuni c">
+            <img src="images/ilbuni_2.png" alt="#">
+        </div>
+    </div>
+    <div class="ilbuni d">
+        <img src="images/ilbuni_3.png" alt="#">
+    </div>
+
+    <script>
+        // javascript를 head 위치에서 작성할 경우, HTML 로드중에 위에있는 코드를 읽으면 content가 없는상태이기 때문에 적용되지 않는다. 그로 인해 body의 아래 쪽에 작성한다.
+        // head에서 작성하고 싶다면 ? 문서의 로드가 끝나기를 기다려주는 코드를 작성해준다.(head 쪽의 상단 참조)
+
+        // 전역 변수 사용을 회피하기 위해
+        // 함수전체를 ()로 감싸준다.
+        (function() {
+            const ilbuni = document.querySelector('.ilbuni.d');
+        
+            const clickInbuniHandler = () => {
+                ilbuni.classList.toggle('special');
+            }
+
+            ilbuni.addEventListener('click', clickInbuniHandler);
+        })();
+        // ilbuni.addEventListener('click', function(){
+        //     ilbuni.classList.add('special');
+        // })
+    </script>
+</body>
+</html>
