@@ -1,0 +1,54 @@
+.stage {
+    /* vw : viewport width */
+    /* vh : viewport height */
+    /* 100vw 는 브라우저 폭 */
+    /* 100vh 는 브라우저 높이 */
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 75vw;
+    background: #ffff00;
+}
+
+@keyframes moving {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(90vw);
+    }
+}
+
+.ilbuni { 
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    /* 
+    contain은 세로나 가로로 짤리지 않고 틀에 꽉 차게 설정된다!
+    */
+    background-size: contain;
+    animation: moving infinite alternate;
+}
+
+.ilbuni:nth-child(1) {
+    left: 5%;
+    bottom: 5%;
+    background-image: url(../images/ilbuni_0.png);
+    animation-duration: 5s;
+}
+
+.ilbuni:nth-child(2) {
+    left: 10%;
+    bottom: 3%;
+    background-image: url(../images/ilbuni_1.png);
+    animation-duration: 3s;
+}
+
+.ilbuni:nth-child(3) {
+    left: 15%;
+    bottom: 10%;
+    background-image: url(../images/ilbuni_2.png);
+    animation-duration: 4s;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/02_02.css">
+</head>
+
+<body>
+    <div class="stage">
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+    </div>
+    <script>
+        (function () {
+            // 이벤트 위임
+            // 부모에게 위임한다!
+            // const ilbuniGroup = document.querySelectorAll('.ilbuni');
+
+            const stage = document.querySelector('.stage');
+
+            function clickHandler(e) {
+                // console.log(e.currentTarget);
+                // console.log(e.target);
+                // if문의 조건에 이벤트의 타겟이 ilbuni class를 포함하고 있다면 아래의 코드를 실행한다.
+                if (e.target.classList.contains('ilbuni')) {
+                    stage.removeChild(e.target);
+                }
+            }
+
+            stage.addEventListener('click', clickHandler);
+            // for (let i = 0; i < ilbuniGroup.length; i++) {
+            //     ilbuniGroup[i].addEventListener('click', clickHandler);
+            // 만약 훨씬 많은 양을 처리해야 할 경우에는 성능상 문제가 생길 수 있다.
+            // }
+
+        })();
+    </script>
+</body>
+
+</html>
