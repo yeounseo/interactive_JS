@@ -83,11 +83,11 @@
             background: rgba(0, 0, 255, 0.7);
         }
 
-        .door:hover .door-body {
+        .door-opened .door-body {
             transform: perspective(800px) rotateY(-110deg);
         }
 
-        .door:hover .ilbuni {
+        .door-opened .ilbuni {
             transition: 0.5s 0.5s;
             transform: translate3d(0, 0, 0);
         }
@@ -116,6 +116,37 @@
             <div class="door-body"></div>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const stageElem = document.querySelector('.stage');
+            // 현재 활성화된 아이템을 저장
+            // 포인트 ! 
+            // 활성화된 아이템을 확인을 하고, 그 조건에 맞춰서 반응
+            // ex) 하나만 선택해서 반응하게 되는 것들
+            let currentItem;
+
+            function doorHandler(e) {
+                const targetElem = e.target;
+
+                if (currentItem) {
+                    currentItem.classList.remove('door-opened');
+                }
+
+                // classList.add
+                // classList.remove
+                // classList.toggle 
+                // classList.contains
+
+                if (targetElem.classList.contains('door-body')) {
+                    targetElem.parentNode.classList.add('door-opened');
+                    currentItem = targetElem.parentNode;
+                }
+            }
+
+            stageElem.addEventListener('click', doorHandler);
+        })();
+    </script>
 </body>
 
 </html>
