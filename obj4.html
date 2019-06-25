@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+    <style>
+        .card {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 3rem;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function Card(num, color) {
+            this.num = num;
+            this.color = color;
+            this.init();
+        }
+
+        // prototype 의 속성으로 넣으면 자동으로 인스턴스의 속성으로 들어간다. console.log로 확인
+        // Card.prototype.width = 100;
+        // Card.prototype.height = 150;
+
+        // 아래처럼 작성시에는 constructor 속성을 설정해주어야 한다.
+        // this 키워드로 개별 객체에 접근
+        // init : 기본적으로 card를 생성하는 함수
+        Card.prototype = {
+            constructor: Card,
+            init: function () {
+                const mainElem = document.createElement('div');
+                mainElem.style.color = this.color;
+                mainElem.innerHTML = this.num;
+                mainElem.classList.add('card');
+                document.body.appendChild(mainElem);
+            }
+        };
+
+        const card1 = new Card(Math.floor(Math.random() * 10), 'green');
+        const card2 = new Card(7, 'red');
+
+        // console.log(card1.color);
+        // console.log(card2.color);
+        // console.log(card1.width);
+        // console.log(card2.width);
+        // console.log(card1);
+    </script>
+</body>
+
+</html>

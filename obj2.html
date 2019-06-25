@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <h2>생성자</h2>
+    <script>
+        // 생성자 (객체를 생성해내는 틀) constructor
+        // 생성자 함수의 첫글자를 대문자로 작성
+        function Person(nickname, age) {
+            this.nickname = nickname;
+            this.age = age;
+            this.introduce = function () {
+                console.log('안녕하세요 저는 ' + this.nickname + '이고, 나이는 ' + this.age + '이에요.');
+            }
+        }
+
+        // new : 생성자 함수를 호출할때 붙이는 keyword
+        // 인스턴스 (instance) : person1 , person2
+        const person1 = new Person('일분이', 10);
+        const person2 = new Person('이분이', 8);
+
+        person1.introduce();
+        person2.introduce();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <script>
+
+        const person = {};
+        // 속성 , property
+        person.name = '일분이';
+        person.age = 10;
+        // 메소드 , method (값이 함수인 경우)
+        person.introduce = function () {
+            console.log('안녕하세요? 저는 ' + this.name + '이고 나이는 ' + this.age + '이에요.');
+        };
+
+        const person1 = {
+            name: '십일분이',
+            age: 11,
+            introduce: function () {
+                console.log('안녕하세요 저는 ' + this.name + '이고, 나이는 ' + this.age + '이에요.');
+            }
+        };
+
+        person.introduce();
+        person1.introduce();
+        // const person = new Object();
+    </script>
+</body>
+
+</html>
