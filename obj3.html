@@ -22,14 +22,29 @@
             console.log('안녕하세요 저는 ' + this.nickname + '이고, 나이는 ' + this.age + '이에요.');
         };
 
+        function Dog(dogname, age) {
+            this.dogname = dogname;
+            this.age = age;
+        }
+
+        Dog.prototype.bark = function () {
+            alert(this.dogname+'is barking '+this.dogname+`'s age is `+this.age);
+        }
+
         // new : 생성자 함수를 호출할때 붙이는 keyword
         // 인스턴스 (instance) : person1 , person2
         // 공통되는 부분은 prototype 객체로 처리하자.
         const person1 = new Person('일분이', 10);
         const person2 = new Person('이분이', 8);
 
+        const dog1 = new Dog('여우', 14);
+        const dog2 = new Dog('초코', 10);
+
         person1.introduce();
         person2.introduce();
+
+        dog1.bark();
+        dog2.bark();
     </script>
 </body>
 
