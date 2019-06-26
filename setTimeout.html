@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SetTimeout</title>
+    <style>
+        .btn {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">취소</button>
+
+    <!-- 실행 지연, 타이밍, 반복 -->
+    <script>
+        // 첫번째 인자로 함수, 두번째 인자로 시간이 들어간다.
+        let timeId;
+        const btn = document.querySelector('.btn');
+
+        function sample() {
+            console.log('sample!');
+        }
+
+        timeId = setTimeout(sample, 3000);
+
+        // clearTimeout: setTimeout을 취소 , 비동기 테스트 , 의도적인 취소 지연
+        // clearTimeout(timeId);
+
+        btn.addEventListener('click', function () {
+            clearTimeout(timeId);
+        })
+        // function sample() {
+        //     setTimeout(function () {
+        //         console.log('setTimeout test');
+
+        //     }, 3000);
+        // }
+        // sample();
+    </script>
+</body>
+
+</html>
