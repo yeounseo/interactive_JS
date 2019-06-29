@@ -1,0 +1,28 @@
+/* add reset */
+body {
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NaNumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background: #fff000;
+}
+
+.world { 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    /* preserve-3d : 실제로 3d 효과가 될 벽 ,캐릭터가 하위요소에 있는데, world에서 하위요소 까지 전달하기 위해 설정을 해줘야한다. 
+    *internet exploer에서는 적용되지 않는다!*
+    -webkit 기반에서는 잘 적용된다. */
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        function Dog(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Dog.prototype.barking = function () {
+            alert(this.name + ' is bark bark!');
+        };
+        Dog.prototype.greet = function () {
+            console.log('my name is ' + this.name + ' my old is ' + this.age);
+        }
+
+        Person.prototype.greetlog = function () {
+            console.log('Hi! I\'m ' + this.name + ' and my old is ' + this.age);
+        };
+        Person.prototype.greet = function () {
+            alert('Hi! I\'m ' + this.name + ' and my old is ' + this.age + '.');
+        };
+        var person1 = new Person('Unseo', 26);
+        var dog1 = new Dog('여우', 15);
+
+        person1.greet();
+        dog1.barking();
+        dog1.greet();
+        // 아래 생성자 함수에서 호출을 할때 마다, 매번 greeting() 함수를 다시 정의한다. 최선의 방법이 아니다. 
+
+        // 생성자 함수는 클래스의 자바스크립트 버전이다.
+        // 이 함수가 함수가 가질 것 같은 모든 특징을 갖고 있지만, 아무것도 리턴하지 않는다.
+        // 생성자 함수는 단순히 프로퍼티와 메소드를 정의한다. 또 이를 정의 할 때 this 라는 키워드를 사용하는데, 이것은 객체 인스턴스가 생성될 때마다, 각 객체의 name 프로퍼티가 생성자 함수에서 전달된 name 값과 같아진다. 그리고 greeting() 메소드 역시 생성자에서 전달된 name 값을 사용한다.
+        // function Person(name) {
+        //     this.name = name;
+        //     this.greeting = function () {
+        //         alert('Hi! I\'m ' + this.name + '.');
+        //     };
+        // }
+
+        // var person1 = new Person('Unseo');
+        // var person2 = new Person('Jihye');
+
+        // person1.greeting();
+        // person2.greeting();
+        // 아래의 코드는 깔끔하지 않다. 굳이 빈 객체를 만들어 내용을 채워 리턴해야 하는가?  생성자 함수의 형태로 간단한 단축 명령을 제공한다.
+        // function createNewPerson(name) {
+        //     let obj = {};
+        //     obj.name = name;
+        //     obj.greeting = function () {
+        //         alert('Hi! I\'m ' + this.name + '.');
+        //     };
+        //     return obj;
+        // }
+
+        // let unseo = createNewPerson('Unseo');
+
+
+    </script>
+</body>
+
+</html>
